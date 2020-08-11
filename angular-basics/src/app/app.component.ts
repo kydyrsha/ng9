@@ -11,13 +11,25 @@ export class AppComponent {
   number = 42
   arr = [1,2,3]
   obj = {a:1, b:2, c:3}
-  img = 'https://w7.pngwing.com/pngs/595/279/png-transparent-vue-js-javascript-library-angularjs-react-vue-js-template-angle-text-thumbnail.png'
+
+  inputValue = ''
+
 
   constructor () {
-    setTimeout(() => {
-      console.log('Timeout')
-      this.img = 'https://www.stimulsoft.com/images/products/reports-angular/logo.svg'
-    },5000)
+
+  }
+
+  onInput(event: KeyboardEvent) {
+    console.log('Event', event)
+    this.inputValue = (<HTMLInputElement>event.target).value
+  }
+
+  onClick() {
+    console.log('Click!')
+  }
+
+  onBlur(str: string) {
+    this.inputValue = str
   }
 
 }
