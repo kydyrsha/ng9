@@ -7,29 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  title = 'Dynamic title'
-  number = 42
-  arr = [1,2,3]
-  obj = {a:1, b:2, c:3}
+  title = 'Initial Title'
 
-  inputValue = ''
-
-
-  constructor () {
-
+  onInput(event: any) {
+    this.title = event.target.value
   }
 
-  onInput(event: KeyboardEvent) {
-    console.log('Event', event)
-    this.inputValue = (<HTMLInputElement>event.target).value
-  }
 
-  onClick() {
-    console.log('Click!')
-  }
-
-  onBlur(str: string) {
-    this.inputValue = str
-  }
 
 }
