@@ -1,7 +1,7 @@
 <h1>Angular, I am here!</h1>
 
-<button (click)="toggle = !toggle">Toggle</button>
-<button (click)="toggle = 111">Set 111</button>
+<!-- <button (click)="toggle = !toggle">Toggle</button>
+<button (click)="toggle = 111">Set 111</button> -->
 
 <!-- bind in one direction [] -->
 <!-- bind opp direction () -->
@@ -12,8 +12,29 @@
   <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, rerum.</p>
 </ng-template> -->
 
-<div [ngSwitch]="toggle">
+<!-- <div [ngSwitch]="toggle">
   <p *ngSwitchCase="true" class="red">Lorem ipsum.</p>
   <p *ngSwitchCase="false" class="blue">Lorem ipsum dolor sit.</p>
   <p *ngSwitchDefault>Lorem ipsum.</p>
-</div>
+</div> -->
+
+<!-- <ul>
+  <li *ngFor="let n of arr; let idx = index">
+    {{idx +1}} <strong>{{n}}</strong>
+</li>
+</ul> -->
+
+
+<ul style="list-style:none;">
+  <li *ngFor="let post of objs">
+    <p>{{post.title}}</p> <b>{{post.author}}</b>
+    <ul>
+      <li *ngFor="let comment of post.comments">
+        <div>
+          <small>{{comment.name}}</small>
+          <p>{{comment.text}}</p>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
