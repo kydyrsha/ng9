@@ -5,17 +5,41 @@
 // let strArray: string[] = ['H', 'e', 'l']
 // let numArray: Array<number> = [1, 1, 2, 3]
 
+//
+// function logInfo(name: string, age: number): void {
+//   console.log(`Info: ${name}, ${age}`)
+// }
+//
+// logInfo('Sanat', 23)
+//
+//
+// function calc(a:number, b:number): number {
+//   if (typeof b === 'string') b = +b
+//   return a + b
+// }
+//
+// console.log(calc(2, 3))
 
-function logInfo(name: string, age: number): void {
-  console.log(`Info: ${name}, ${age}`)
+
+class Server {
+  static VERSION = '1.0.3'
+
+  private status: string = 'working'
+
+  constructor(public name: string, protected ip: number) {
+  }
+
+  public turnOn() {
+    this.status = 'working'
+  }
+
+  protected turnOff() {
+    this.status = 'offline'
+  }
+
+  getStatus(): string {
+    return this.status
+  }
 }
 
-logInfo('Sanat', 23)
-
-
-function calc(a:number, b:number): number {
-  if (typeof b === 'string') b = +b
-  return a + b
-}
-
-console.log(calc(2, 3))
+const server: Server = new Server('AWS', 1234)
