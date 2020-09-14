@@ -64,14 +64,34 @@
 
 // Interface and Classes
 
-interface SayHello {
-  sayHello: () => void
+// interface SayHello {
+//   sayHello: () => void
+// }
+//
+// class User implements SayHello {
+//   constructor(private name: string, private age: number) {}
+//
+//   sayHello() {
+//     console.log(this.name + ' Hello!')
+//   }
+// }
+
+// Generic Interfaces
+
+// const arr: Array<number> = [1, 2, 3, 4] // <type of array>
+
+interface User {
+  id: number
+  name: string
+  age: number
 }
 
-class User implements SayHello {
-  constructor(private name: string, private age: number) {}
+const users: Array<User> = [
+  {id: 1, name: 'A', age:1},
+  {id: 2, name: 'S', age:23}
+]
 
-  sayHello() {
-    console.log(this.name + ' Hello!')
-  }
-}
+const users2: User[] = [
+  {id: 1, name: 'A', age:1},
+  {id: 2, name: 'S', age:23}
+]
