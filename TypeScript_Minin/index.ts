@@ -21,25 +21,43 @@
 // console.log(calc(2, 3))
 
 
-class Server {
-  static VERSION = '1.0.3'
+// class Server {
+//   static VERSION = '1.0.3'
+//
+//   private status: string = 'working'
+//
+//   constructor(public name: string, protected ip: number) {
+//   }
+//
+//   public turnOn() {
+//     this.status = 'working'
+//   }
+//
+//   protected turnOff() {
+//     this.status = 'offline'
+//   }
+//
+//   getStatus(): string {
+//     return this.status
+//   }
+// }
+//
+// const server: Server = new Server('AWS', 1234)
 
-  private status: string = 'working'
 
-  constructor(public name: string, protected ip: number) {
-  }
+// OBJECTS
 
-  public turnOn() {
-    this.status = 'working'
-  }
-
-  protected turnOff() {
-    this.status = 'offline'
-  }
-
-  getStatus(): string {
-    return this.status
-  }
+interface UserInterface {
+  name: string
+  age: number
+  logInfo: () => void
+  id?: any
 }
 
-const server: Server = new Server('AWS', 1234)
+const user: UserInterface = {
+  name: 'Sanat',
+  age: 23,
+  logInfo() {
+    console.log(this.name = ' ' + this.age)
+  }
+}
