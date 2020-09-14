@@ -4,10 +4,13 @@
 //
 // let strArray: string[] = ['H', 'e', 'l']
 // let numArray: Array<number> = [1, 1, 2, 3]
-var user = {
-    name: 'Sanat',
-    age: 23,
-    logInfo: function () {
-        console.log(this.name = ' ' + this.age);
+var User = /** @class */ (function () {
+    function User(name, age) {
+        this.name = name;
+        this.age = age;
     }
-};
+    User.prototype.sayHello = function () {
+        console.log(this.name + ' Hello!');
+    };
+    return User;
+}());

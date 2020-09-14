@@ -47,17 +47,31 @@
 
 // OBJECTS
 
-interface UserInterface {
-  name: string
-  age: number
-  logInfo: () => void
-  id?: any
+// interface UserInterface {
+//   name: string
+//   age: number
+//   logInfo: () => void
+//   id?: any
+// }
+//
+// const user: UserInterface = {
+//   name: 'Sanat',
+//   age: 23,
+//   logInfo() {
+//     console.log(this.name = ' ' + this.age)
+//   }
+// }
+
+// Interface and Classes
+
+interface SayHello {
+  sayHello: () => void
 }
 
-const user: UserInterface = {
-  name: 'Sanat',
-  age: 23,
-  logInfo() {
-    console.log(this.name = ' ' + this.age)
+class User implements SayHello {
+  constructor(private name: string, private age: number) {}
+
+  sayHello() {
+    console.log(this.name + ' Hello!')
   }
 }
